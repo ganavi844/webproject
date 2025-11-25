@@ -1,0 +1,296 @@
+/* ===== Global Styles ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #d7f7ff, #ffe1f0);
+  margin: 0;
+  padding: 0;
+  color: #333;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ===== Header ===== */
+header, h2 {
+  background: linear-gradient(135deg, #4a90e2, #7b1fa2);
+  color: white;
+  padding: 22px 0;
+  margin: 0;
+  font-size: 30px;
+  font-weight: 700;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  letter-spacing: 1.2px;
+  text-align: center;
+  border-radius: 0 0 20px 20px;
+}
+
+/* ===== Form Card (Glass Effect) ===== */
+form {
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.8);
+  max-width: 480px;
+  margin: 40px auto;
+  padding: 35px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  animation: fadeIn 0.6s ease;
+}
+
+/* Floating input fields */
+form .input-group {
+  position: relative;
+  margin: 20px 0;
+}
+
+form input {
+  width: 100%;
+  padding: 12px 12px 12px 15px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 2px solid #aaa;
+  background: transparent;
+  transition: 0.3s;
+}
+
+form input:focus {
+  border-color: #7b1fa2;
+  box-shadow: 0 0 8px rgba(123, 31, 162, 0.5);
+}
+
+form label {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  padding: 0 5px;
+  color: #888;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+form input:focus + label,
+form input:not(:placeholder-shown) + label {
+  top: -8px;
+  font-size: 12px;
+  color: #4a90e2;
+}
+
+/* Stylish gradient button */
+form button {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #4a90e2, #7b1fa2);
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  box-shadow: 0 5px 15px rgba(74,144,226,0.4);
+  transition: 0.3s ease;
+}
+
+form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(74,144,226,0.5);
+}
+
+/* ===== Messages ===== */
+.success, .error {
+  padding: 14px;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 20px auto;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  animation: fadeIn 0.5s ease;
+}
+
+.success {
+  background: #d4f8d4;
+  color: #1b5e20;
+  border-left: 5px solid #2e7d32;
+}
+
+.error {
+  background: #ffd3d3;
+  color: #7f0000;
+  border-left: 5px solid #c62828;
+}
+
+/* ===== Beautiful Table Design ===== */
+table {
+  border-collapse: collapse;
+  width: 92%;
+  margin: 30px auto;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+th {
+  background: linear-gradient(135deg, #4a90e2, #7b1fa2);
+  color: white;
+  padding: 15px;
+  font-size: 16px;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+td {
+  padding: 15px;
+  font-size: 15px;
+}
+
+tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+tr:hover {
+  background: #e3f2fd;
+  transition: 0.3s ease;
+}
+
+/* ===== Footer ===== */
+footer {
+  background: linear-gradient(135deg, #4a90e2, #7b1fa2);
+  color: white;
+  text-align: center;
+  padding: 12px;
+  margin-top: 40px;
+  font-size: 14px;
+  border-radius: 20px 20px 0 0;
+  letter-spacing: 1px;
+}
+
+/* ===== Mystery Bottle – Upgraded ===== */
+#mystery-bottle {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 70px;
+  height: 90px;
+  background: url('bottle.png') no-repeat center/contain;
+  cursor: pointer;
+  transition: 0.3s ease;
+  z-index: 1000;
+  filter: drop-shadow(0 5px 12px rgba(0,0,0,0.3));
+}
+
+#mystery-bottle:hover {
+  transform: rotate(-8deg) scale(1.12);
+  filter: drop-shadow(0 8px 20px rgba(255,0,128,0.5));
+}
+
+/* ===== Chat Popup – Glassmorphism ===== */
+#chat-popup {
+  position: fixed;
+  bottom: 120px;
+  right: 30px;
+  width: 320px;
+  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.75);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1001;
+  animation: popIn 0.4s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+#chat-header {
+  background: linear-gradient(135deg, #4a90e2, #7b1fa2);
+  color: white;
+  padding: 12px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#chat-body {
+  flex: 1;
+  padding: 12px;
+  overflow-y: auto;
+  max-height: 320px;
+}
+
+#chat-body p {
+  margin: 8px 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  display: inline-block;
+  max-width: 85%;
+  animation: fadeIn 0.3s ease;
+}
+
+.bot {
+  background: #d7ecff;
+}
+
+.user {
+  background: #e1c9ff;
+  align-self: flex-end;
+}
+
+#chat-input-area {
+  display: flex;
+  border-top: 1px solid #ddd;
+}
+
+#chat-input-area input {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+#chat-input-area button {
+  background: linear-gradient(135deg, #4a90e2, #7b1fa2);
+  color: white;
+  border: none;
+  padding: 0 15px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  form, table {
+    width: 90%;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+}
+#secret-bottle {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  font-size: 60px;
+  cursor: pointer;
+  z-index: 999;
+}
